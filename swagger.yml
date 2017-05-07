@@ -1,0 +1,17 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: express demo
+host: localhost
+basePath: /expressdemo
+schemes:
+  - http
+paths:
+  /hello:
+    get:
+      tags:
+        - hello
+      summary: Hello World
+      responses:
+        200:
+          description: successful operation

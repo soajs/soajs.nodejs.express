@@ -1,0 +1,26 @@
+{
+  "name": "soajs.nodejs",
+  "description": "SOAJS nodejs express example",
+  "version": "1.0.0",
+  "author": {
+    "name": "soajs team",
+    "email": "team@soajs.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:soajs/soajs.nodejs.express.git"
+  },
+  "license": "Apache-2.0",
+  "engines": {
+    "node": "*"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "express": "*",
+    "soajs.nodejs": "1.0.*"
+  },
+  "devDependencies": {
+  }
+}
