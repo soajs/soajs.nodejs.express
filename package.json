@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "express": "*",
-    "soajs.nodejs": "1.0.*"
+    "soajs.nodejs": "soajs/soajs.nodejs.git"
   },
   "devDependencies": {
   }
