@@ -2,16 +2,36 @@ swagger: "2.0"
 info:
   version: "1.0.0"
   title: express demo
-host: localhost
-basePath: /expressdemo
+host: dev-api.mydomain.com
+basePath: /express
 schemes:
   - http
 paths:
-  /hello:
+  /tidbit/hello:
     get:
       tags:
         - hello
       summary: Hello World
+      parameters:
+        - name: username
+          in: query
+          required: true
+          type: string
+        - name: lastname
+          in: query
+          required: true
+          type: string
       responses:
         200:
           description: successful operation
+          schema:
+            type: object
+    post:
+      tags:
+        - hello
+      summary: Returns SOAJS Object
+      responses:
+        200:
+          description: successful operation
+          schema:
+            type: object

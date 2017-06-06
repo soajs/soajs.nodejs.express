@@ -12,10 +12,9 @@ module.exports = {
 
 		//required to support swagger simulator and model injection at runtime
 		"swagger": true,
-		"injection": true,
 
 		//basic service information
-		"serviceName": "nodejs",
+		"serviceName": "express",
 		"serviceGroup": "Custom Services",
 		"serviceVersion": 1,
 		"servicePort": 4381,
