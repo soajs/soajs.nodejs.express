@@ -22,7 +22,7 @@ app.get('/tidbit/hello', function(req, res){
 
 app.post('/tidbit/hello', function(req, res){
 
-    req.soajs.demo = "philippe";
+    req.soajs.demo = "philippe audet";
 	res.send(req.soajs);
 });
 
