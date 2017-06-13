@@ -15,7 +15,7 @@
     "node": "*"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt coverage"
   },
   "dependencies": {
     "express": "*",
