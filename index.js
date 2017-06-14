@@ -21,6 +21,7 @@ app.get('/tidbit/hello', function(req, res){
 });
 
 app.post('/tidbit/hello', function(req, res){
+    req.soajs.fadi = "demo";
 	res.send(req.soajs);
 });
 
