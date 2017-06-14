@@ -24,4 +24,4 @@ before_script:
 script:
     - 'grunt coverage'
 after_success:
-    - 'node ./cd.js'
+    - 'node ./soajs.cd.js'
