@@ -21,7 +21,15 @@ app.get('/tidbit/hello', function(req, res){
 });
 
 app.post('/tidbit/hello', function(req, res){
-	res.send(req.soajs);
+	
+	var response = req.soajs;
+	
+	req.soajs.awareness.getHost(function(host){
+		
+		response.controller = host;
+		res.send(response);
+	});
+	
 });
 
 app.listen(4381);
