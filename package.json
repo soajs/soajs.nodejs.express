@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "express": "*",
-    "soajs.nodejs": "soajs/soajs.nodejs.git#develop"
+    "soajs.nodejs": "soajs/soajs.nodejs.git"
   },
   "devDependencies": {
     "grunt": "0.4.5",
