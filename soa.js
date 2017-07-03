@@ -12,7 +12,7 @@ module.exports = {
 
 		//required to support swagger simulator and model injection at runtime
 		"swagger": true,
-
+		"swaggerFilename": "swagger.yml",
 		//basic service information
 		"serviceName": "express",
 		"serviceGroup": "Custom Services",
