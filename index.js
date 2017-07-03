@@ -7,7 +7,7 @@ const soajsMW = require('soajs.nodejs');
 var url = require('url');
 
 app.use(soajsMW({}));
-
+console.log("Leap")
 app.get('/tidbit/hello', function(req, res){
 	var url_parts = url.parse(req.url, true);
 	var query = url_parts.query;
