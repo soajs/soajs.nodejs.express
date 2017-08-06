@@ -80,7 +80,7 @@ var utils = {
 		var params = {};
 		
 		params.uri = dashboardProtocol + "://" + dashboardDomain + ":" + dashboardPort +
-			dashboardAPIRoute + "?deploy_token=" + deployToken;
+			"/dashboard" + dashboardAPIRoute + "?deploy_token=" + deployToken;
 		
 		params.headers = {
 			"key" : authKey,
