@@ -70,6 +70,8 @@ var utils = {
 		
 		console.log("Launching CD call...");
 		utils.createRequest(function(params){
+			console.log(params.uri);
+			console.log(JSON.stringify(params.body, null, 2));
 			request.post(params, cb);
 		});
 	},
