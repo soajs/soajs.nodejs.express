@@ -16,7 +16,7 @@ app.get('/tidbit/hello', function(req, res){
     var lastname = query.lastname;
 
     res.send({
-	    "message": "Hello Rack , I am an EXPRESS service, you are ["+username+"] and your last name is : ["+lastname+"]"
+	    "message": "Hello antoine , I am an EXPRESS service, you are ["+username+"] and your last name is : ["+lastname+"]"
     });
 });
 
