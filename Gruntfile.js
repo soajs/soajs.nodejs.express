@@ -112,7 +112,6 @@ module.exports = function (grunt) {
 		
 		instrument: {
 			files: ['index.js'],
-			//files: ['**/*.js'],
 			options: {
 				lazy: false,
 				basePath: 'test/coverage/instrument/'
