@@ -25,8 +25,12 @@ app.post('/tidbit/hello', function(req, res){
 	var response = req.soajs;
 	
 	req.soajs.awareness.getHost(function(host){
-		
 		response.controller = host;
+		
+		if(req.soajs.reg){ // if SOAJS_REGISTRY_API is set and everything went well, reg will be defined
+			response.databases = req.soajs.reg.getDatabases();
+		}
+		
 		res.send(response);
 	});
 	
