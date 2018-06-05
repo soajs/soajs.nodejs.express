@@ -19,9 +19,13 @@
   },
   "dependencies": {
     "express": "*",
-    "soajs.nodejs": "soajs/soajs.nodejs.git"
+    "soajs.nodejs": "1.0.*"
   },
   "devDependencies": {
+    "soajs.mongodb.data": "1.0.*",
+    "soajs.controller": "1.0.*",
+    "request": "2.81.0",
+    "shelljs": "0.7.5",
     "grunt": "0.4.5",
     "grunt-contrib-jshint": "1.1.0",
     "grunt-jsdoc": "2.1.0",

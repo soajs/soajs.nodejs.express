@@ -1,6 +1,5 @@
 'use strict';
 
-
 var fs = require('fs');
 var path = require('path');
 
@@ -86,51 +85,94 @@ module.exports = function (grunt) {
 				src: 'Gruntfile.js'
 			}
 		},
-		
 		env: {
 			mochaTest: {
-				SOAJS_REGISTRY_BUILDALL: true,
-				SOAJS_ENV: 'dev',
 				APP_DIR_FOR_CODE_COVERAGE: '../',
-				SOAJS_SRVIP: '127.0.0.1'
+				SOAJS_ENV: 'dev',
+				SOAJS_SRVIP: '127.0.0.1',
+				SOAJS_PROFILE: ''
 			},
 			coverage: {
-				SOAJS_REGISTRY_BUILDALL: true,
-				SOAJS_ENV: 'dev',
 				APP_DIR_FOR_CODE_COVERAGE: '../test/coverage/instrument/',
-				SOAJS_SRVIP: '127.0.0.1'
+				SOAJS_ENV: 'dev',
+				SOAJS_SRVIP: '127.0.0.1',
+				SOAJS_TEST: true,
+				SOAJS_PROFILE: ''
 			}
 		},
-
+		
 		clean: {
 			doc: {
 				src: ['doc/']
+			},
+			coverage: {
+				src: ['test/coverage/']
 			}
 		},
-
+		
 		instrument: {
-			files: ['*.js'],
+			files: ['index.js'],
+			//files: ['**/*.js'],
 			options: {
 				lazy: false,
 				basePath: 'test/coverage/instrument/'
 			}
 		},
-
+		
+		storeCoverage: {
+			options: {
+				dir: 'test/coverage/reports'
+			}
+		},
+		
+		makeReport: {
+			src: 'test/coverage/reports/**/*.json',
+			options: {
+				type: 'lcov',
+				dir: 'test/coverage/reports',
+				print: 'detail'
+			}
+		},
+		
 		mochaTest: {
 			unit: {
 				options: {
 					reporter: 'spec',
 					timeout: 90000
 				},
-				src: ['test/*.js']
+				src: ['test/unit/*.js']
+			},
+			integration: {
+				options: {
+					reporter: 'spec',
+					timeout: 90000
+				},
+				src: ['test/integration/_server.test.js']
+			}
+		},
+		
+		coveralls: {
+			options: {
+				// LCOV coverage file relevant to every target
+				src: 'test/coverage/reports/lcov.info',
+				
+				// When true, grunt-coveralls will only print a warning rather than
+				// an error, to prevent CI builds from failing unnecessarily (e.g. if
+				// coveralls.io is down). Optional, defaults to false.
+				force: false
+			},
+			your_target: {
+				// Target-specific LCOV coverage file
+				src: 'test/coverage/reports/lcov.info'
 			}
 		}
 	});
-
+	
 	process.env.SHOW_LOGS = grunt.option('showLogs');
 	grunt.registerTask("default", ['jshint']);
+	grunt.registerTask("integration", ['env:mochaTest', 'mochaTest:integration']);
 	grunt.registerTask("unit", ['env:mochaTest', 'mochaTest:unit']);
-	grunt.registerTask("coverage", ['clean', 'env:coverage', 'instrument', 'mochaTest:unit']);
-
+	grunt.registerTask("test", ['clean', 'env:coverage', 'instrument', 'mochaTest:unit', 'mochaTest:integration']);
+	grunt.registerTask("coverage", ['clean', 'env:coverage', 'instrument', 'mochaTest:unit', 'mochaTest:integration', 'storeCoverage', 'makeReport', 'coveralls']);
+	
 };
-
