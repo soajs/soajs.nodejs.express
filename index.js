@@ -8,26 +8,26 @@ var url = require('url');
 
 app.use(soajsMW({}));
 
-app.get('/tidbit/hello', function(req, res){
+app.get('/tidbit/hello', function (req, res) {
 	var url_parts = url.parse(req.url, true);
 	var query = url_parts.query;
-    
-    var username = query.username;
-    var lastname = query.lastname;
-
-    res.send({
-	    "message": "Hello, I am an EXPRESS service, you are ["+username+"] and your last name is : ["+lastname+"]"
-    });
+	
+	var username = query.username;
+	var lastname = query.lastname;
+	
+	res.send({
+		"message": "Hello, I am an EXPRESS service, you are [" + username + "] and your last name is : [" + lastname + "]"
+	});
 });
 
-app.post('/tidbit/hello', function(req, res){
+app.post('/tidbit/hello', function (req, res) {
 	
 	var response = req.soajs;
 	
-	req.soajs.awareness.getHost(function(host){
+	req.soajs.awareness.getHost(function (host) {
 		response.controller = host;
 		
-		if(req.soajs.reg){ // if SOAJS_REGISTRY_API is set and everything went well, reg will be defined
+		if (req.soajs.reg) { // if SOAJS_REGISTRY_API is set and everything went well, reg will be defined
 			response.databases = req.soajs.reg.getDatabases();
 		}
 		
