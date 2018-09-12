@@ -3,23 +3,14 @@ language: node_js
 node_js: 6.9.5
 services:
     - mongodb
-env:
-    - CXX=g++-4.8
 branches:
     only:
         - master
         - develop
 addons:
-    apt:
-        sources:
-            - ubuntu-toolchain-r-test
-        packages:
-            - g++-4.8
     hosts:
         - localhost
         - dev-controller
-before_install:
-    - 'sudo apt-get update && sudo apt-get install make g++'
 before_script:
     - 'npm install -g grunt-cli'
 script:
