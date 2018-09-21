@@ -7,7 +7,7 @@ branches:
     only:
         - master
         - develop
-        - demos/cicd
+        - demo
 addons:
     hosts:
         - localhost
