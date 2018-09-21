@@ -1,13 +1,21 @@
 'use strict';
 
+//require express
 var express = require('express');
+
+//create app from express
 var app = express();
+
+//require soajs middleware
 const soajsMW = require('soajs.nodejs');
 
 var url = require('url');
 
+//instruct app to use the middleware
 app.use(soajsMW({}));
 
+
+//create api
 app.get('/tidbit/hello', function(req, res){
 	var url_parts = url.parse(req.url, true);
 	var query = url_parts.query;
@@ -15,15 +23,17 @@ app.get('/tidbit/hello', function(req, res){
 	var username = query.username;
 	var lastname = query.lastname;
 	
-	//updating something in the code
+	//return text response
 	res.send({
 		"message": "Hello DEMO, I am an EXPRESS service, you are [" + username + "] and your last name is : [" + lastname + "]"
 	});
 });
 
+//create another api
 app.post('/tidbit/hello', function (req, res) {
 	var response = req.soajs;
 	
+	//use soajs framework from the request ( offered by the middleware )
 	req.soajs.awareness.getHost(function(host){
 		response.controller = host;
 		
@@ -31,6 +41,7 @@ app.post('/tidbit/hello', function (req, res) {
 			response.databases = req.soajs.reg.getDatabases();
 		}
 		
+		//return a response that contains the configuration passed on to this microservice
 		res.send(response);
 	});
 });
