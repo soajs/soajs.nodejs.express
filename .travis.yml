@@ -6,7 +6,6 @@ services:
 branches:
     only:
         - master
-        - develop
 addons:
     hosts:
         - localhost
