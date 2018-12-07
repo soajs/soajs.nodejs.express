@@ -3,7 +3,7 @@
 let express = require('express');
 let app = express();
 const soajsMW = require('soajs.nodejs');
-const soajsConf = require('./soa.js');
+const soajsConf = require('./soajs.json');
 
 let url = require('url');
 
