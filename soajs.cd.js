@@ -97,7 +97,7 @@ var utils = {
 		params.json = true;
 		
 		try {
-			config = require("./soa.js");
+			config = require("./soajs.js");
 		}
 		catch(e) {
 			console.log("Could not find a soa.js file, searching for custom config file [config.js] ...");
