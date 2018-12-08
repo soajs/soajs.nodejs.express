@@ -95,20 +95,20 @@ var utils = {
 		};
 		
 		params.json = true;
-		
-		try {
-			config = require("./soajs.json");
-		}
-		catch(e) {
-			console.log("Could not find a soa.js file, searching for custom config file [config.js] ...");
-			
-			try {
-				config = require('./config.js');
-			}
-			catch(e) {
-				console.log("Could not find a config.js file, repo does contain a service code...");
-			}
-		}
+
+        try {
+            config = require("./soajs.json");
+        }
+        catch(e) {
+            console.log("Could not find a soajs.json file, searching for custom config file [config.js] ...");
+
+            try {
+                config = require('./config.js');
+            }
+            catch(e) {
+                console.log("Could not find a config.js file, repo does contain a service code...");
+            }
+        }
 		
 		params.body = {
 			"repo" : gitRepo,
