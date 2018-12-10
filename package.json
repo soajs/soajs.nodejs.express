@@ -22,8 +22,8 @@
     "soajs.nodejs": "1.1.*"
   },
   "devDependencies": {
-    "soajs.mongodb.data": "2.0.*",
-    "soajs.controller": "1.0.*",
+    "soajs.mongodb.data": "2.1.*",
+    "soajs.controller": "1.1.*",
     "request": "2.81.0",
     "shelljs": "0.7.5",
     "grunt": "0.4.5",
@@ -35,7 +35,7 @@
     "grunt-istanbul": "0.7.2",
     "grunt-coveralls": "1.0.1",
     "jshint": "2.9.4",
-    "lodash": "4.17.4",
+    "lodash": "4.17.5",
     "mocha": "3.2.0"
   }
 }
