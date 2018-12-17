@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "soajs.mongodb.data": "2.1.*",
-    "soajs.controller": "1.1.*",
+    "soajs.controller": "2.1.*",
     "request": "2.81.0",
     "shelljs": "0.7.5",
     "grunt": "0.4.5",
