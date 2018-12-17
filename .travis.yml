@@ -1,18 +1,32 @@
-sudo: required
 language: node_js
-node_js: 6.9.5
+
+node_js: 8
+
 services:
-    - mongodb
+- mongodb
+
+env:
+- CXX=g++-4.8
+
 branches:
-    only:
-        - master
+  only:
+  - master
+
 addons:
-    hosts:
-        - localhost
-        - dev-controller
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - g++-4.8
+  hosts:
+  - localhost
+
 before_script:
-    - 'npm install -g grunt-cli'
+- npm install -g grunt-cli
+- sleep 10
+
 script:
-    - 'grunt coverage'
+- grunt coverage
+
 after_success:
-    - 'node ./soajs.cd.js'
+- 'node ./soajs.cd.js'
