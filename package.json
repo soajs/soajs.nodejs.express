@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "express": "*",
-    "soajs.nodejs": "1.1.*"
+    "soajs.nodejs": "2.0.0"
   },
   "devDependencies": {
     "soajs.mongodb.data": "2.1.*",
