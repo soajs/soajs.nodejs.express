@@ -1,26 +1,22 @@
 {
-    "type": "service",
-    "prerequisites": {
-        "cpu": " ",
-        "memory": " "
+  "type": "service",
+  "name": "express",
+  "group": "Custom",
+  "description": "Nodejs express demo.",
+  "port": 4381,
+  "requestTimeout": 30,
+  "requestTimeoutRenewal": 5,
+  "serviceVersion": 1,
+  "extKeyRequired": true,
+  "urac": true,
+  "urac_Profile": false,
+  "urac_ACL": false,
+  "provision_ACL": false,
+  "oauth": true,
+  "maintenance": {
+    "port": {
+      "type": "inherit"
     },
-    "serviceName": "express",
-    "serviceGroup": "Custom Services",
-    "servicePort": 4381,
-    "swagger": true,
-    "requestTimeout": 30,
-    "requestTimeoutRenewal": 5,
-    "serviceVersion": 1,
-    "extKeyRequired": true,
-    "urac": true,
-    "urac_Profile": false,
-    "urac_ACL": false,
-    "provision_ACL": false,
-    "oauth": true,
-    "maintenance": {
-        "port": {
-            "type": "inherit"
-        },
-        "readiness": "/heartbeat"
-    }
+    "readiness": "/heartbeat"
+  }
 }
