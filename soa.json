@@ -1,9 +1,9 @@
 {
   "type": "service",
-  "name": "express",
-  "group": "Custom",
+  "serviceName": "express",
+  "serviceGroup": "Custom",
   "description": "Nodejs express demo.",
-  "port": 4381,
+  "servicePort": 4381,
   "requestTimeout": 30,
   "requestTimeoutRenewal": 5,
   "serviceVersion": 1,

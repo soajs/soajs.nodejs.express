@@ -44,4 +44,4 @@ app.post('/tidbit/hello', (req, res) => {
 
 });
 
-app.listen(soajsConf.port);
+app.listen(soajsConf.servicePort);
